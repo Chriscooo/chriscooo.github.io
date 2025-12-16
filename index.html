@@ -1,7 +1,8 @@
  <style>
      body {
          margin: 0;
-         padding: 0; 
+         padding: 0;
+         overflow: hidden;
      }
 
      .left {
@@ -18,25 +19,97 @@
          margin: 0;
          padding: 0;
      }
+
+     @keyframes fadeInDown {
+         0% {
+             transform: translateY(200%);
+             opacity: 0;
+         }
+         100% {
+             transform: translateY(0%);
+             opacity: 1;
+         }
+     }
+
+     @keyframes fadeInLeft {
+         0% {
+             transform: translateX(100%);
+             opacity: 0;
+         }
+         100% {
+             transform: translateX(0%);
+             opacity: 1;
+         }
+     }
+
+     @keyframes fadeInRight {
+         0% {
+             transform: translateX(-100%);
+             opacity: 0;
+         }
+         100% {
+             transform: translateX(0%);
+             opacity: 1;
+         }
+     }
+
+     .fadeDownAnim {
+         animation: 1.5s fadeInDown;
+     }
+
+     .fadeLeftAnim {
+         animation: 1.5s fadeInLeft;
+     }
+
+     .fadeRightAnim {
+         animation: 1.5s fadeInRight;
+     }
+
+     .sixtyfour-convergence-1 {
+                                 font-family: "Sixtyfour Convergence", sans-serif;
+                                 font-optical-sizing: auto;
+                                 font-weight: 400;
+                                 font-style: normal;
+                                 font-variation-settings:
+                                         "BLED" 0,
+                                         "SCAN" 0,
+                                         "XELA" 0,
+                                         "YELA" 0;
+                             }
      
  </style>
+
+ <head>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+ </head>
+ 
  <body>
  <div class="left">
-     <div style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; !important; display:block;z-index:9999">
+     <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
          <section style="background-color: black; border-inline: 5px solid darkred; color: white; width: 80%; margin: 0 auto;">
-             
+             Controls : WASD, Space to fire.
          </section>
      </div>
      <canvas></canvas>
  </div>
  
+ <div style="position: absolute; top: 5%; right: 27.75%;">
+     <section style="background-color: rgba(100, 100, 100, 0.5); width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+         Chris Carr <br>
+         <br>
+         Game Developer, Programmer, Passionate Hobbyist, <br>
+         and Nerd
+     </section>
+ </div>
+ 
  <div class="right">
-     <div style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; !important; display:block;z-index:9999">
+     <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9999">
          <section>
 
          </section>
      </div>
-     <canvas></canvas>
  </div>
 <script src="./index.js"></script>
  </body>

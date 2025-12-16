@@ -7,6 +7,10 @@ canvas.height = window.innerHeight;
 c.fillStyle = 'black'
 c.fillRect(0, 0, canvas.width, canvas.height);
 
+c.font = "30px Arial";
+c.textAlign = "center";
+c.textBaseline = "middle";
+
 class Player {
     constructor({position, velocity}) {
         this.position = position
@@ -112,9 +116,56 @@ class Asteroid {
     }
 }
 
+class Box {
+    constructor({x, y, w, h}) {
+        this.x = x
+        this.y = y
+        //this.velocity = velocity
+        //this.rotation = 0
+        this.w = w
+        this.h = h
+    }
+
+    draw(){
+        /*
+        c.beginPath()
+        
+        c.moveTo(this.position.x + 150, this.position.y - 30)
+        c.lineTo(this.position.x - 150, this.position.y - 30)
+        c.moveTo(this.position.x + 150, this.position.y - 30)
+        c.lineTo(this.position.x + 150, this.position.y + 30)
+        
+        c.moveTo(this.position.x - 150, this.position.y + 30)
+        c.lineTo(this.position.x + 150, this.position.y + 30)
+        c.moveTo(this.position.x - 150, this.position.y + 30)
+        c.lineTo(this.position.x - 150, this.position.y - 30)
+        
+        c.closePath()
+        */
+
+        c.strokeRect(this.x, this.y, this.w, this.h);
+        
+        c.strokeText("Portfolio", (this.x + this.w / 2), (this.y + this.h / 2));
+        
+        c.strokeStyle = 'white'
+        c.stroke()
+    }
+
+    update(){
+        this.draw()
+    }
+}
+
 const player = new Player({
     position: {x:canvas.width / 2, y:canvas.height / 2},
     velocity: {x:0, y:0}})
+
+const portfolio = new Box({
+    w: canvas.width / 8,
+    h: canvas.height / 12,
+    x: (canvas.width / 2) - (canvas.width / 8 / 2),
+    y: (canvas.height / 4) - (canvas.height / 12 / 2),
+})
 
 player.draw()
 
@@ -184,7 +235,7 @@ const intervalId = window.setInterval(() => {
             radius,
         }
     ))
-}, (Math.random() * 2000))
+}, (Math.random() * 4000))
 
 function circleCollision(circle1, circle2){
     const xDifference = circle2.position.x - circle1.position.x
@@ -235,6 +286,54 @@ function circleTriangleCollision(circle, triangle) {
     return false
 }
 
+
+/*
+function circleBoxCollision(circle, box) {
+    
+    edgeX = 0
+    edgeY = 0
+    
+    if (box.position.x > circle.position.x + circle.radius) {
+        edgeX = circle.position.x + circle.radius;
+    } else if (box.position.x < circle.position.x) {
+        edgeX = circle.position.x;
+    }
+
+    if (box.position.y > circle.position.y + circle.radius) {
+        edgeY = circle.position.y + circle.radius;
+    } else if (box.position.y < circle.position.y) {
+        edgeY = circle.position.y;
+    }
+    
+    distX = edgeX - circle.position.x;
+    distY = edgeY - circle.position.y;
+    let dist = Math.sqrt((distX * distX) + (distY * distY))
+    
+    if (dist <= circle.radius) {
+        return true
+    }
+    
+    return false
+}
+
+
+ */
+
+function circleBoxCollision(circle,rect){
+    var distX = Math.abs(circle.position.x - rect.x-rect.w/2);
+    var distY = Math.abs(circle.position.y - rect.y-rect.h/2);
+    
+    if (distX > (rect.w/2 + circle.radius)) { return false; }
+    if (distY > (rect.h/2 + circle.radius)) { return false; }
+
+    if (distX <= (rect.w/2)) { return true; }
+    if (distY <= (rect.h/2)) { return true; }
+
+    var dx=distX-rect.w/2;
+    var dy=distY-rect.h/2;
+    return (dx*dx+dy*dy<(circle.radius*circle.radius));
+}
+
 function isPointOnLineSegment(x, y, start, end) {
     return (
         x >= Math.min(start.x, end.x) &&
@@ -249,11 +348,16 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height);
 
     player.update()
+    portfolio.update()
 
     for (let i = projectiles.length - 1; i >= 0; i--) {
         const projectile = projectiles[i]
         projectile.update()
-
+        
+        if (circleBoxCollision(projectile, portfolio)) {
+            window.location.href = "portfolio.html";
+        }
+        
         if (projectile.position.x + projectile.radius < 0 ||
             projectile.position.x - projectile.radius > canvas.width ||
             projectile.position.y - projectile.radius > canvas.height ||
@@ -329,9 +433,6 @@ window.addEventListener('keydown', (event)=>{
             break
         case 'KeyA':
             keys.a.pressed = true
-            break
-        case 'KeyS':
-            keys.s.pressed = true
             break
         case 'KeyD':
             keys.d.pressed = true
