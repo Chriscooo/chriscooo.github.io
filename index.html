@@ -1,8 +1,42 @@
-<style>
-    body {
-        margin: 0;
-    }
-</style>
+ <style>
+     body {
+         margin: 0;
+         padding: 0; 
+     }
 
-<canvas></canvas>
+     .left {
+         float:left;
+         width: 33.3%;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+     }
+     .right {
+         float:right;
+         width: 25%;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+     }
+     
+ </style>
+ <body>
+ <div class="left">
+     <div style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; !important; display:block;z-index:9999">
+         <section style="background-color: black; border-inline: 5px solid darkred; color: white; width: 80%; margin: 0 auto;">
+             
+         </section>
+     </div>
+     <canvas></canvas>
+ </div>
+ 
+ <div class="right">
+     <div style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; !important; display:block;z-index:9999">
+         <section>
+
+         </section>
+     </div>
+     <canvas></canvas>
+ </div>
 <script src="./index.js"></script>
+ </body>
