@@ -1,10 +1,183 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+﻿<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: linear-gradient(to bottom, grey, whitesmoke);
+    }
 
+    .left {
+        float:left;
+        width: 33.3%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .right {
+        float:right;
+        width: 25%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            transform: translateY(200%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInLeft {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInRight {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    .fadeDownAnim {
+        animation: 1.5s fadeInDown;
+    }
+
+    .fadeLeftAnim {
+        animation: 1.5s fadeInLeft;
+    }
+
+    .fadeRightAnim {
+        animation: 1.5s fadeInRight;
+    }
+
+    .sixtyfour-convergence-1 {
+        font-family: "Sixtyfour Convergence", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0,
+                "XELA" 0,
+                "YELA" 0;
+    }
+
+    .pixelify-sans-reg {
+        font-family: "Pixelify Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+
+    a:link {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: black;
+    }
+
+    /* visited link */
+    a:visited {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: darkred;
+    }
+
+    /* mouse over link */
+    a:hover {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: red;
+    }
+
+    /* selected link */
+    a:active {
+        color: red;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+</style>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+
+<body>
+<div class="left">
+    <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
+        <section>
+            <p><a href="./index.html" style="font-size: 130%"><- Homepage</a></p>
+            <br>
+            <br>
+            <br>
+            <p><a href="./paycheck.html" style="font-size: 120%">"Paycheck" - A Robbery Board Game</a></p>
+            <br>
+            <br>
+            <p><a href="./dogs.html" style="font-size: 120%">"The Dogs of War" - A Text-Based Feudal Japan Narrative, Featuring Doge(s)</a></p>
+            <br>
+            <br>
+            <p><a href="./eod.html" style="font-size: 120%">"E.O.D." - A Pitch for a Concept for a Future Project, A Rouge-like Bomb-Defusal Puzzle Game</a></p>
+            <br>
+            <br>
+            <p><a href="./portfolio.html" style="font-size: 130%"><- Portfolio</a></p>
+        </section>
+    </div>
+</div>
+
+<div style="position: absolute; top: 5%; right: 40%;">
+    <section style="background-color: rgba(100, 100, 100, 0.5); width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+        Portfolio Project #7
+    </section>
+</div>
+
+<div style="position: absolute; top: 10%; left: 36%;">
+    <section style="width: 50%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: black; z-index:9999;">
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">"Like Clockwork"</p>
+        <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
+            My most recent project, "Like Clockwork," is narrative-driven Steampunk adventure. Though short, its main purpose was to stretch my metaphorical writing legs and fully immerse myself in writing a narrative; <br> 
+            perhaps as I should have done with the previous two Twine games. <br>
+            That being said, while I made some errors during my time crunch, I am still extremely happy with the finished product - from the custom backgrounds to the plot, and especially the steampunk-cockney dialogue. <br>
+            My professor remarked, "...there's a touch of insanity in this project, and I love it." <br>
+            That was a review that made me giggle like a kid. Anyway, have a go if you like! <Br>
+            <br>
+            <br>
+            <a href="./clockwork/Like%20Clockwork.html"><img src="playbutton.png" alt="Play Button" style="width:10%;"></a>
+        </p>
+
+    </section>
+</div>
+
+<div class="right">
+    <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9999">
+        <section>
+            <p><a href="./bio.html" style="font-size: 130%">Bio -></a></p>
+            <br>
+            <br>
+            <br>
+            <p><a href="./dasvidaniya.html" style="font-size: 120%">"Dasvidaniya" - A Text-Based Russian Submarine Narrative</a></p>
+            <br>
+            <br>
+            <p><a href="./maritime.html" style="font-size: 120%">"Maritime Madness" - A 2-D Fishing-Based Horror Adventure</a></p>
+            <br>
+            <br>
+            <p><a href="./troubadour.html" style="font-size: 120%">"Trial of the Troubadour" - A 3-D, Open-World Rhythm Game, Played From the Perspective of a Romantic Poet</a></p>
+        </section>
+    </div>
+</div>
+<script src="./index.js"></script>
 </body>
-</html>
