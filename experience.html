@@ -1,0 +1,313 @@
+﻿<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: linear-gradient(to bottom, grey, whitesmoke);
+    }
+
+    .left {
+        float:left;
+        width: 33.3%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .right {
+        float:right;
+        width: 25%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            transform: translateY(200%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInLeft {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInRight {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    .fadeDownAnim {
+        animation: 1.5s fadeInDown;
+    }
+
+    .fadeLeftAnim {
+        animation: 1.5s fadeInLeft;
+    }
+
+    .fadeRightAnim {
+        animation: 1.5s fadeInRight;
+    }
+
+    .sixtyfour-convergence-1 {
+        font-family: "Sixtyfour Convergence", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0,
+                "XELA" 0,
+                "YELA" 0;
+    }
+
+    .pixelify-sans-reg {
+        font-family: "Pixelify Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+
+    a:link {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: black;
+    }
+
+    /* visited link */
+    a:visited {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: darkred;
+    }
+
+    /* mouse over link */
+    a:hover {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: red;
+    }
+
+    /* selected link */
+    a:active {
+        color: red;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    .content-section {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: black;
+        display: none;
+        padding: 15px;
+        margin-top: 15px;
+        background-color: rgba(100, 100, 100, 0.0);
+    }
+    
+    select {
+        padding: 10px;
+        background-color: rgba(100, 100, 100, 0.0);
+        font-size: 160%; 
+        font-family: 'Pixelify Sans', sans-serif; 
+        color: darkred;
+    }
+    
+</style>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="left">
+    <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
+        <section>
+            <p><a href="./portfolio.html" style="font-size: 130%"><- Portfolio</a></p>
+            <br>
+            <br>
+            <!-- Dropdown menu code acquired from https://stackoverflow.com/questions/6868428/using-javascript-and-a-dropdown-to-change-page-content#:~:text=2%20Answers,link%20CC%20BY%2DSA%203.0 -->
+            
+            <select id="content-selector" onchange="changeContent(this.value)">
+                <option value="default" selected>Experience</option>
+                <option value="entry">Entry-Level Positions</option>
+                <option value="intern">Intern Positions</option>
+                <option value="dev">Development Positions</option>
+            </select>
+            
+            <div id="entry-content" class="content-section">
+                <h3>Home Depot - Customer Service Associate</h3>
+                <p>My very first real, true, employment - I spent a summer working at my local Home Depot. Here, I learned customer service skills, improved my teamwork, and tempered my ability to perform under pressure.</p>
+                <br>
+                <h3>Domino's Pizza - Delivery Specialist</h3>
+                <p>Similarly to Home Depot, I spent a summer working to further my teamworking skills and ability to function under time constraints, as well as in high-pressure situations (think "Pizza's about to fall out of the oven!")</p>
+            </div>
+
+            <div id="intern-content" class="content-section">
+                <h3>*CLASSIFIED*</h3>
+                <p>Unfortunately, I signed an NDA - so I won't be able to discuss my current internship in detail.</p>
+            </div>
+
+            <div id="dev-content" class="content-section">
+                <h3>AI Core - XR Developer</h3>
+                <p>Under the UA AI Core, I developed experiences involving virtual reality, augmented reality, and artificial intelligence. 
+                    My final project at AI Core was a showcase for a possible attraction for the Pima County Visitor's Center, 
+                    in which visitors could access a kiosk and speak to a friendly, AI-powered cactus with sunglasses. 
+                    The cactus was given access to Pima County documents regarding several tourist locations, including the Air and Space Museum, 
+                    which we 3-D scanned and imported into Unreal Engine 5 to create a digital representation of the museum for the cactus to wander around.</p>
+            </div>
+            
+            <script>
+                function changeContent(selectedValue) {
+                    // Hide all content sections first
+                    var sections = document.getElementsByClassName('content-section');
+                    for (var i = 0; i < sections.length; i++) {
+                        sections[i].style.display = 'none';
+                    }
+
+                    // Show the selected content section
+                    if (selectedValue !== 'default') {
+                        var targetElementId = selectedValue + '-content';
+                        document.getElementById(targetElementId).style.display = 'block';
+                    }
+                }
+            </script>
+        </section>
+    </div>
+</div>
+
+<div style="position: absolute; top: 5%; right: 27.75%;">
+    <section style="background-color: rgba(100, 100, 100, 0.5); width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+        Chris Carr <br>
+        <br>
+        Game Developer, Programmer, Passionate Hobbyist, <br>
+        and Nerd
+    </section>
+</div>
+
+<div style="position: absolute; top: 15%; left: 37.5%;">
+    <section style="width: 50%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: black; z-index:9999;">
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">Experience & Education</p>
+        <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">For employers, take a look at my previous experience & relevant information!</p>
+        <br>
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif; ">Skills & Proficiences</p>
+        <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">Additionally, here's a look at my current skills and abilities.</p>
+        <p style="font-size: 100%; font-family: 'Pixelify Sans', sans-serif; color: darkred;">Programming</p>
+        <ul style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
+            <li>C#</li>
+            <li>Python</li>
+            <li>HTML / CSS (I did build this website, after all)</li>
+            <li>JS (Limited)</li>
+            <li>Engine Languages (GDScript and Blueprint)</li>
+        </ul>
+        <br>
+        <p style="font-size: 100%; font-family: 'Pixelify Sans', sans-serif; color: darkred;">Design / Development</p>
+        <ul style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
+            <li>Unity</li>
+            <li>Unreal Engine 5</li>
+            <li>Godot (Limited Experience)</li>
+            <li>Blender (3D Modeling, Animation, Texturing, UV Wrapping, etc)</li>
+            <li>Aseprite (Pixel Art, Animation)</li>
+        </ul>
+        <br>
+        <p style="font-size: 100%; font-family: 'Pixelify Sans', sans-serif; color: darkred;">General Strong-Suits</p>
+        <ul style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
+            <li>Teamwork and Leadership - Excels at leading the group, when neccessary, though I often take a backseat when possible.</li>
+            <br>
+            <li>Work Ethic - I built this website in 3 Days, start to finish - when I set my mind to something, particularly when I'm passionate about it, I'm unstoppable.</li>
+            <br>
+            <li>Problem Solving and Perseverance - Years of "banging my head against the wall," refusing to give up, has taught me valuable problem solving skills.</li>
+            <br>
+            <li>Empathy - I always strive to understand my peers, regardless of our relationship. I believe understanding someone is the first step in gaining a new friend.</li>
+        </ul>
+    </section>
+</div>
+
+<div class="right">
+    <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9998">
+        <section>
+            <p><a href="./index.html" style="font-size: 130%">Homepage -></a></p>
+            <br>
+            <br>
+            <!-- Dropdown menu code acquired from https://stackoverflow.com/questions/6868428/using-javascript-and-a-dropdown-to-change-page-content#:~:text=2%20Answers,link%20CC%20BY%2DSA%203.0 -->
+
+            <select id="content-selector" onchange="changeContent(this.value)">
+                <option value="default" selected>Education</option>
+                <option value="hs">High School Education</option>
+                <option value="uni">College Education</option>
+                <option value="awards">Awards & Honors</option>
+            </select>
+
+            <div id="hs-content" class="content-section">
+                <h3>Canyon Del Oro High School - Class of 2023</h3>
+                <p>With a weighted G.P.A. of 4.18, I excelled in all my classes. I dedicated myself to learning and growing, but always making time to explore my interests, in order to determine my future career. 
+                    Additionally, my thirst to grow drove my to enroll as a certificate student in the International Baccalaureate program at C.D.O. There, I experienced a globally-minded, accelerated curriculum 
+                    in multiple classes.</p>
+            </div>
+
+            <div id="uni-content" class="content-section">
+                <h3>University of Arizona - Class of 2027</h3>
+                <p>I'm currently in my Junior year at UA - working towards my Bachelor's in Game Design and Development. With a current G.P.A. of 3.3, I'm working hard to grow and improve.</p>
+            </div>
+
+            <div id="awards-content" class="content-section">
+                <h3>Awards and Honors - Throughout Education</h3>
+                <p>
+                    Wildcat Excellence Scholarship – Awarded for academic achievement and leadership potential. <br>
+                    <br>
+                    Student Coding Award – Recognized for excellence in coding during university-level competitions. <br>
+                    <br>
+                    Canyon Del Oro High Honor Roll - All years. <br>
+                    <br>
+                    UA Dean’s List and Dean’s List with Distinction <br>
+                    <br>
+                    Canyon Del Oro Academic Letter – Awarded for outstanding academic performance. <br>
+                    <br>
+                    Seals of Excellence in CTE, Science, and Social Studies. <br>
+                </p>
+            </div>
+
+            <script>
+                function changeContent(selectedValue) {
+                    // Hide all content sections first
+                    var sections = document.getElementsByClassName('content-section');
+                    for (var i = 0; i < sections.length; i++) {
+                        sections[i].style.display = 'none';
+                    }
+
+                    // Show the selected content section
+                    if (selectedValue !== 'default') {
+                        var targetElementId = selectedValue + '-content';
+                        document.getElementById(targetElementId).style.display = 'block';
+                    }
+                }
+            </script>
+        </section>
+    </div>
+</div>
+
+<div class="fadeRightAnim" style="float:left; width: 33.3%; text-align: center; margin: 0; padding: 0; position: absolute; bottom: 4%; left: -4%; z-index:9999">
+    <p style="font-size: 85%; font-family: 'Pixelify Sans', sans-serif;">Contact Info :
+        <span style="color: red;"><br>
+            Cell : (720)-326-8866 <br>
+            Email : chriscoo2005@gmail.com
+</span>
+    </p>
+</div>
+
+<script src="./index.js"></script>
+</body>
