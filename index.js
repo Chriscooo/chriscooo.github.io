@@ -117,7 +117,8 @@ class Asteroid {
 }
 
 class Box {
-    constructor({x, y, w, h}) {
+    constructor({x, y, w, h, word}) {
+        this.word = word
         this.x = x
         this.y = y
         //this.velocity = velocity
@@ -145,7 +146,7 @@ class Box {
 
         c.strokeRect(this.x, this.y, this.w, this.h);
         
-        c.strokeText("Portfolio", (this.x + this.w / 2), (this.y + this.h / 2));
+        c.strokeText(this.word, (this.x + this.w / 2), (this.y + this.h / 2));
         
         c.strokeStyle = 'white'
         c.stroke()
@@ -161,10 +162,19 @@ const player = new Player({
     velocity: {x:0, y:0}})
 
 const portfolio = new Box({
+    word: "Portfolio",
     w: canvas.width / 8,
     h: canvas.height / 12,
     x: (canvas.width / 2) - (canvas.width / 8 / 2),
     y: (canvas.height / 4) - (canvas.height / 12 / 2),
+})
+
+const bio = new Box({
+    word: "Bio",
+    w: canvas.width / 8,
+    h: canvas.height / 12,
+    x: (canvas.width / 2) - (canvas.width / 8 / 2),
+    y: (canvas.height / 4) + (canvas.height / 5 / 2),
 })
 
 player.draw()
@@ -349,6 +359,7 @@ function animate() {
 
     player.update()
     portfolio.update()
+    bio.update()
 
     for (let i = projectiles.length - 1; i >= 0; i--) {
         const projectile = projectiles[i]
@@ -356,6 +367,10 @@ function animate() {
         
         if (circleBoxCollision(projectile, portfolio)) {
             window.location.href = "portfolio.html";
+        }
+
+        if (circleBoxCollision(projectile, bio)) {
+            window.location.href = "bio.html";
         }
         
         if (projectile.position.x + projectile.radius < 0 ||

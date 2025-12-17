@@ -76,20 +76,29 @@
                                          "XELA" 0,
                                          "YELA" 0;
                              }
+
+     .pixelify-sans-reg {
+                         font-family: "Pixelify Sans", sans-serif;
+                         font-optical-sizing: auto;
+                         font-weight: <weight>;
+                         font-style: normal;
+                     }
      
  </style>
 
  <head>
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
  </head>
  
  <body>
  <div class="left">
      <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
-         <section style="background-color: black; border-inline: 5px solid darkred; color: white; width: 80%; margin: 0 auto;">
-             Controls : WASD, Space to fire.
+         <section style="background-color: black; border-inline: 5px solid darkred; border-radius: 3px; padding: 10px; color: white; width: 80%; margin: 0 auto; margin-top: 5%; font-family: 'Pixelify Sans', sans-serif;">
+             <p style="font-size: 105%;">Welcome!</p>
+             <p style="font-size: 105%;">Fire projectiles at boxes to enter the page with the corresponding label!</p>
+             <p style="font-size: 100%;">Controls : <span style="color: red">'W'</span> to move, <span style="color: red">'A'</span> / <span style="color: red">'D'</span> to turn left and right, and <span style="color: red">'Space'</span> to fire.</p>
          </section>
      </div>
      <canvas></canvas>

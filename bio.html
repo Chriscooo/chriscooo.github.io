@@ -1,0 +1,164 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: linear-gradient(to bottom, grey, whitesmoke);
+    }
+
+    .left {
+        float:left;
+        width: 33.3%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .right {
+        float:right;
+        width: 25%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            transform: translateY(200%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInLeft {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInRight {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    .fadeDownAnim {
+        animation: 1.5s fadeInDown;
+    }
+
+    .fadeLeftAnim {
+        animation: 1.5s fadeInLeft;
+    }
+
+    .fadeRightAnim {
+        animation: 1.5s fadeInRight;
+    }
+
+    .sixtyfour-convergence-1 {
+        font-family: "Sixtyfour Convergence", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0,
+                "XELA" 0,
+                "YELA" 0;
+    }
+
+    .pixelify-sans-reg {
+        font-family: "Pixelify Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+    
+    a:link {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: black;
+    }
+
+    /* visited link */
+    a:visited {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: darkred;
+    }
+
+    /* mouse over link */
+    a:hover {
+        font-family: 'Pixelify Sans', sans-serif;
+        color: red;
+    }
+
+    /* selected link */
+    a:active {
+        color: red;
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+</style>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="left">
+    <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
+        <section>
+            <p><a href="./index.html" style="font-size: 130%"><- Homepage</a></p>
+        </section>
+    </div>
+</div>
+
+<div style="position: absolute; top: 5%; right: 27.75%;">
+    <section style="background-color: rgba(100, 100, 100, 0.5); width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+        Chris Carr <br>
+        <br>
+        Game Developer, Programmer, Passionate Hobbyist, <br>
+        and Nerd
+    </section>
+</div>
+
+<div style="position: absolute; top: 15%; left: 35%;">
+    <section style="width: 50%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+        <img src="https://i.imgur.com/BDGvKr3.png"></img>
+    </section>
+    <section style="width: 50%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: black; z-index:9999;">
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">Game Designer and Developer</p>
+        <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">Currently completing Bachelor's in G.D.D. at UA in Tucson, Arizona.</p>
+        <p style="font-size: 100%; font-family: 'Sixtyfour Convergence', sans-serif;">Bio</p>
+        <p style="font-size: 85%; font-family: 'Pixelify Sans', sans-serif;">Hi! I'm <span style="color: red;">Chris Carr</span></p>
+        <p style="font-size: 85%; font-family: 'Pixelify Sans', sans-serif;">I started my game design journey, not even knowing it was my dream; now, it's more than a major, career, or hobby. 
+            It's my main creative ambition. While I always have enjoyed working with computers - both physically and digitally - my first true hobby was building Legos. 
+            To this day, I fuel my drive to create with the same heart and mind that built with plastic bricks for hours on end.
+            My dream is to become a competent designer and developer - and while I've made significant strides, you can always be better, and work harder.
+        </p>
+    </section>
+    <section style="width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: black; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif; z-index:9999;">
+        
+    </section>
+</div>
+
+<div class="right">
+    <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9999">
+        <section>
+            <p><a href="./portfolio.html" style="font-size: 130%">Portfolio -></a></p>
+        </section>
+    </div>
+</div>
+<script src="./index.js"></script>
+</body>
