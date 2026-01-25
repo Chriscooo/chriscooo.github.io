@@ -190,7 +190,7 @@ const portfolio = new Box({
     w: canvas.width / 3,
     h: canvas.height / 12,
     x: (canvas.width / 2) - (canvas.width / 3 / 2),
-    y: (canvas.height / 4) + (canvas.height / 20 / 2),
+    y: (canvas.height / 4) + (canvas.height / 20),
 })
 
 const bio = new Box({

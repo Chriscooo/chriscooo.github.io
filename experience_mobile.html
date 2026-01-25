@@ -3,7 +3,8 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-image: linear-gradient(to bottom, grey, whitesmoke);
+        background-color: rgba(100, 100, 100, 0.5);
+        overflow: auto;
     }
 
     .left {
@@ -112,25 +113,31 @@
         font-family: 'Pixelify Sans', sans-serif;
         color: black;
         display: none;
-        padding: 15px;
+        padding: 1%;
         margin-top: 15px;
         background-color: rgba(100, 100, 100, 0.0);
     }
     
     select {
-        padding: 10px;
+        width: 90%;
+        padding: 5px;
         background-color: rgba(100, 100, 100, 0.0);
-        font-size: 160%; 
+        font-size: 70%; 
         font-family: 'Pixelify Sans', sans-serif; 
         color: darkred;
+    }
+
+    .centerDiv {
+        text-align: center;
+        ;
     }
     
 </style>
 
 <head>
     <script type="text/javascript">
-        if (screen.width < 700) {
-            document.location = "./experience_mobile.html";}
+        if (screen.width > 700) {
+            document.location = "./experience.html";}
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,7 +151,7 @@
 
 <body>
 <div class="left">
-    <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
+    <div class="fadeRightAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:220%; border-color: darkred; border-right-style: groove; !important; display:block;z-index:9999">
         <section>
             <p><a href="./portfolio.html" style="font-size: 130%"><- Portfolio</a></p>
             <br>
@@ -199,21 +206,27 @@
     </div>
 </div>
 
-<div style="position: absolute; top: 5%; right: 27.75%;">
-    <section style="background-color: rgba(100, 100, 100, 0.5); width: 100%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: darkred; font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">
+<div style="position: absolute; top: 2.5%; left: 29.5%;">
+    <section style="background-color: rgba(100, 100, 100, 0.5); width: 50%; text-align: center; padding: 15px; border-radius: 3px; color: darkred; font-size: 80%; font-family: 'Sixtyfour Convergence', sans-serif;">
         Chris Carr <br>
         <br>
-        Game Developer, Programmer, Passionate Hobbyist, <br>
+        <br>
+        Game Developer, <br>
+        <br>
+        Programmer, <br>
+        <br>
+        Passionate Hobbyist, <br>
+        <br>
         and Nerd
     </section>
 </div>
 
-<div style="position: absolute; top: 15%; left: 37.5%;">
-    <section style="width: 50%; text-align: center; padding: 5px; padding-right: 1px; border-radius: 3px; color: black; z-index:9999;">
-        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">Experience & Education</p>
+<div class="centerDiv" style="width: 40%; position: absolute; top: 25%; left: 28.5%; text-align: center; text-justify: center;">
+    <section style="width: 100%; text-align: center; padding: 5px; border-radius: 3px; color: black; z-index:9999;">
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">Experience <br> & <br> Education</p>
         <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">For employers, take a look at my previous experience & relevant information!</p>
         <br>
-        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif; ">Skills & Proficiences</p>
+        <p style="font-size: 110%; font-family: 'Sixtyfour Convergence', sans-serif;">Skills <br> & <br> Abilities</p>
         <p style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">Additionally, here's a look at my current skills and abilities.</p>
         <p style="font-size: 100%; font-family: 'Pixelify Sans', sans-serif; color: darkred;">Programming</p>
         <ul style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
@@ -235,7 +248,7 @@
         <br>
         <p style="font-size: 100%; font-family: 'Pixelify Sans', sans-serif; color: darkred;">General Strong-Suits</p>
         <ul style="font-size: 80%; font-family: 'Pixelify Sans', sans-serif;">
-            <li>Teamwork and Leadership - Excels at leading the group, when neccessary, though I often take a backseat when possible.</li>
+            <li>Teamwork and Leadership - I excel at leading the group, when neccessary, though I often take a backseat when possible.</li>
             <br>
             <li>Work Ethic - I built most of this website in 3 Days, start to finish - when I set my mind to something, particularly when I'm passionate about it, I'm unstoppable.</li>
             <br>
@@ -247,9 +260,9 @@
 </div>
 
 <div class="right">
-    <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:100%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9998">
+    <div class="fadeLeftAnim" style="position:absolute; background-color: rgba(100, 100, 100, 0.5); width:25%; height:220%; border-color: darkred; border-left-style: groove; !important; display:block;z-index:9998">
         <section>
-            <p><a href="./index.html" style="font-size: 130%">Homepage -></a></p>
+            <p><a href="./index.html" style="font-size: 130%">-> Homepage</a></p>
             <br>
             <br>
             <!-- Dropdown menu code acquired from https://stackoverflow.com/questions/6868428/using-javascript-and-a-dropdown-to-change-page-content#:~:text=2%20Answers,link%20CC%20BY%2DSA%203.0 -->
@@ -309,11 +322,12 @@
     </div>
 </div>
 
-<div class="fadeRightAnim" style="float:left; width: 33.3%; text-align: center; margin: 0; padding: 0; position: absolute; bottom: 4%; left: -4%; z-index:9999">
+<div class="fadeRightAnim" style="float:left; width: 20%; text-align: center; margin: 0; padding: 0; position: absolute; bottom: -115%; left: 1%; z-index:9999">
     <p style="font-size: 85%; font-family: 'Pixelify Sans', sans-serif;">Contact Info :
         <span style="color: red;"><br>
             Cell : (720)-326-8866 <br>
-            Email : chriscoo2005@gmail.com
+            Email : chriscoo2005<br>
+            @gmail.com
 </span>
     </p>
 </div>
